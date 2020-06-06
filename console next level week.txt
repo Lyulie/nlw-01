@@ -1,0 +1,91 @@
+backend
+-----------------------------------------------------------------------
+npm init -y       cria um arquivo com o package.json vazio padrao
+npm i express       instala o express
+
+npm i typescript -D instalar o typescript
+npm i ts-node -D       conversor de ts pra js
+
+npx tsc --init    cria automaticamente um arquivo de configuração do typescript
+npm i ts-node-dev -D     eh o nodemon do typescript
+
+package.json scripts       "dev": "ts-node-dev src/server.ts"
+npm run dev
+
+*database*
+
+npm i knex
+
+após criar todas as tables e etc, criar o arquivo knexfile.ts na raiz do app:
+npx knex migrate:latest --knexfile knexfile.ts
+
+package.json scripts      "knex-migrate": "knex --knexfile knexfile.ts migrate:latest"
+
+após criar os seeds que serve para popular o banco de dados antes de ter algum dado real:
+
+package.json scripts       "knex-seed": "knex --knexfile knexfile.ts seed:run",
+
+alteraçao no package.json scripts pra rodar mais rapido, ignorando o node modules durante a execução:
+"dev": "ts-node-dev --transpileOnly --ignore-watch node_modules src/server.ts",
+
+truncate >> resetar tabela 
+
+
+npm i cors
+
+-dia 5-
+
+npm install multer
+
+npm install celebrate //validação de dados no caso da aplicação soh na criação de pontos, que é o unico método post
+/\
+npm i @types/hapi__joi  // a verdadeira lib eh @hapi/joi, mas n é possivel passar 2 '@', entao o @ sai e no lugar da barra adiciona 2 underline
+-------------------------------------------------
+frontend
+
+npx create-react-app web --template=typescript        criar uma pasta pra react web modelo typescript
+npm start     abrir o browser com o projeto atual
+
+npm i react-icons
+npm i react-router-dom      criar o routes.tsx
+
+npm i leaflet react-leaflet  ///instalar o mapa no projeto
+
+npm i axios       // biblioteca para puxar informações do node para o front end
+
+**dia 5**
+
+npm i react-dropzone  // https://github.com/react-dropzone/react-dropzone
+------------------------------------------------
+mobile
+
+expo install expo-font @expo-google-fonts/ubuntu @expo-google-fonts/roboto
+
+expo install @react-navigation/native
+expo install react-native-gesture-handler react-native-reanimated react-native-screens react-native-safe-area-context @react-native-community/masked-view
+expo install @react-navigation/stack
+
+expo install react-native-maps
+
+expo install expo-constants
+
+expo install react-native-emoji //https://www.npmjs.com/package/react-native-emoji
+
+expo install react-native-svg
+
+npm install axios
+
+expo install expo-location //serve pra descobrir a localização do usuario
+
+expo install expo-mail-composer
+
+desafio react-native-picker-select
+
+
+----
+git
+
+rm -rf -git  /// remover totalmente a pasta git de um projeto
+
+
+
